@@ -12,3 +12,13 @@ hr:
 
 create an array to store objects of both developer and hr
 iterate through the array and print total salary of everyone
+
+interface IManagerOperations
+	add(e:Employee):boolean
+	printAll():void
+	filterBySalary(criteria:number):Employee[]
+
+class EmployeeManager
+	add(e:Employee):boolean
+	printAll():void
+	filterBySalary(criteria:number):Employee[]

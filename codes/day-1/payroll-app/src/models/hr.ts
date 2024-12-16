@@ -9,7 +9,8 @@ export class Hr extends Employee {
         //this.gratuityPay = gratuityPay
     }
 
-    calculateSalary(): number {
-        return super.calculateSalary() + this.gratuityPay
+    calculateSalary(): void {
+        super.calculateSalary()
+        this.totalSalary += this.gratuityPay
     }
 }

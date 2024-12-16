@@ -4,6 +4,10 @@
         "outDir": "build",
         "target": "ES5",
         "strict": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "lib": [
+            "DOM",
+            "ES2022"
+        ]
     }
 }

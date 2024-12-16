@@ -14,10 +14,18 @@ export class Employee {
         this.hraPay = hraPay;
     }
     */
+    protected totalSalary: number = 0;
+
     constructor(public id: number, public name: string, public basicPay: number, public daPay: number, public hraPay: number) {
 
     }
-    calculateSalary(): number {
-        return this.basicPay + this.daPay + this.hraPay
+    get TotalSalary() {
+        return this.totalSalary
+    }
+    // set TotalSalary(value: number) {
+    //     this.totalSalary = value
+    // }
+    calculateSalary(): void {
+        this.totalSalary = this.basicPay + this.daPay + this.hraPay
     }
 }

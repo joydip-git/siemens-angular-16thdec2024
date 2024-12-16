@@ -27,7 +27,8 @@ var Developer = /** @class */ (function (_super) {
         //this.incentivePay = incentivePay
     }
     Developer.prototype.calculateSalary = function () {
-        return _super.prototype.calculateSalary.call(this) + this.incentivePay;
+        _super.prototype.calculateSalary.call(this);
+        this.totalSalary += this.incentivePay;
     };
     return Developer;
 }(employee_1.Employee));

@@ -9,7 +9,8 @@ export class Developer extends Employee {
         //this.incentivePay = incentivePay
     }
 
-    calculateSalary(): number {
-        return super.calculateSalary() + this.incentivePay
+    calculateSalary(): void {
+        super.calculateSalary()
+        this.totalSalary += this.incentivePay
     }
 }

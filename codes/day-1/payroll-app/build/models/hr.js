@@ -27,7 +27,8 @@ var Hr = /** @class */ (function (_super) {
         //this.gratuityPay = gratuityPay
     }
     Hr.prototype.calculateSalary = function () {
-        return _super.prototype.calculateSalary.call(this) + this.gratuityPay;
+        _super.prototype.calculateSalary.call(this);
+        this.totalSalary += this.gratuityPay;
     };
     return Hr;
 }(employee_1.Employee));
