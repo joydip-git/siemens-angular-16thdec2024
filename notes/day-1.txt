@@ -1,0 +1,70 @@
+https://github.com/joydip-git/siemens-angular-16thdec2024
+
+JavaScript
+TypeScript
+Node JS
+
+Angular
+
+Node JS
+Vs Code
+
+HTML
+---------------
+self-closing tag or empty tag: no nested element inside that tag
+<tag-name > or <tag-name />
+ex: meta => <meta>, <br>
+
+web servers:
+-------------------
+production servers:
+
+Internet Information service (IIS - windows os)
+Tomcat (Apapche)
+NGINX
+Vercel
+
+dev:
+application development web server (app server)
+
+
+Cascading Style Sheet (CSS):
+----------------------------------
+background-color:blue
+
+
+in-line:
+------------------
+<element-name style="background-color: bisque;font-family:'Courier New'; text-align: center;>
+
+
+out-line:
+-------------------
+i. element selector:
+tag-name1, tag-name2,... { prop1:value;prop2:value }
+
+ii. id selector:
+#id1, #id2, ...{ prop1:value;prop2:value }
+
+iii. class selector:
+
+.cls-name { prop1:value;prop2:value }
+
+apply:
+<element-name class="cls-name">
+
+a. style tag
+b. separate css file [out-file]
+
+ 
+
+
+
+
+
+
+
+
+
+
+
