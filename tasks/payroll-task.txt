@@ -1,0 +1,14 @@
+developer:
+	data => name, id, basic, da, hra, incentive
+	method: calculateSalary:
+		args: NA
+		return type: number
+
+hr:
+	data => name, id, basic, da, hra, gratuity
+	method: calculateSalary:
+		args: NA
+		return type: number
+
+create an array to store objects of both developer and hr
+iterate through the array and print total salary of everyone

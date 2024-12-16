@@ -1,0 +1,16 @@
+{
+  "name": "ts-app",
+  "version": "1.0.0",
+  "scripts": {
+    "compile": "tsc",
+    "compile:w": "tsc --watch",
+    "app": "node ./build/index.js"
+  },
+  "keywords": [],
+  "author": "joydip",
+  "license": "ISC",
+  "description": "simple ts app",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

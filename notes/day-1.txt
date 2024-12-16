@@ -76,6 +76,37 @@ any C++ application can use this as library
 
 Node JS => JS runtime using C++, built at the top of V8 engine. it has a rich library.
 server-side framework => web app, web api (restful) server, 
+
+
+TypeScript:
+-------------------------
+1. a development level/mode language
+b. provides - strict typification and static type checking
+c. offers additional features - like, interface, generics, extra data types, such as - any, optional, partial, unknown etc.
+d. can't be run directly in browser or node js
+e. needs transpilation (conversion to JS)
+
+transpiler for TypeScript => TypeScript Compiler (tsc)
+
+tool used to install: npm (Node Package Manager)
+
+package installation:
+	a. local:
+		>npm i <package-name> [complete dependency]
+		>npm i <package-name> -D [dev dependency]
+
+	older:
+		>npm i <package-name> --save [complete dependency]
+		>npm i <package-name> --save-dev [dev dependency]
+
+	b. global: 
+		>npm i <package-name> --location=global
+	path: C:\Users\<user-name>\AppData\Roaming\npm
+
+package.json file => configuration and dependencies
+create using following command:
+>npm init --yes
+
  
 
 
