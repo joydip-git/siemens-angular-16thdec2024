@@ -56,6 +56,26 @@ apply:
 a. style tag
 b. separate css file [out-file]
 
+
+HTML document object model (HTML DOM) => created by browser
+
+HTML parser, JS engine, CSS engine
+
+JS engine:
+------------------------
+1. chrome => V8
+2. firefox => Spidermonkey
+3. safari => JSCore (indigo)
+4. edge => chakra => V8 (chromekit)
+5. opera => chromekit browser
+
+
+2009 => Ryan Dahl => Node JS
+V8 engine => written using C++ and an open soure
+any C++ application can use this as library
+
+Node JS => JS runtime using C++, built at the top of V8 engine. it has a rich library.
+server-side framework => web app, web api (restful) server, 
  
 
 
