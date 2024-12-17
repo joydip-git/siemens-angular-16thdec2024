@@ -1,21 +1,22 @@
-"use strict";
-// async function getData() {
-//     try {
-//         const response: Response = await fetch('https://jsonplaceholder.typicode.com/todos')
-//         const data = await response.json()
-//         console.log(data.slice(0, 5));
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-function getData() {
-    fetch('https://jsonplaceholder.typicode.com/todos')
-        .then(function (response) {
-        response
-            .json()
-            .then(function (data) { return console.log(data.slice(0, 5)); }, function (e) { return console.log(e); });
-    }, function (err) {
-        console.log(err);
+define(["require", "exports", "./data-storage"], function (require, exports, data_storage_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    //subscriber
+    var dataSub = data_storage_1.dataStorage
+        .storageObservable
+        .subscribe({
+        next: function (data) { return console.log('client: ' + data); },
+        error: function (e) { return console.log(e); }
     });
-}
-getData();
+    setTimeout(function () {
+        dataSub.unsubscribe();
+        console.log('cancelled subscription...');
+    }, 20000);
+    //publisher
+    var value = 1;
+    setInterval(function () {
+        console.log('publishing: ' + value);
+        data_storage_1.dataStorage.publish(value);
+        ++value;
+    }, 2000);
+});

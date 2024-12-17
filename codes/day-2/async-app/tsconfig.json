@@ -4,6 +4,7 @@
         "outDir": "build",
         "target": "ES5",
         "strict": true,
+        "module": "AMD",
         "forceConsistentCasingInFileNames": true,
         "lib": [
             "DOM",

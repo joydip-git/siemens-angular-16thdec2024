@@ -7,3 +7,29 @@ ex: Node JS, though is a JS-based server side framework, but uses extra threads 
 
 ES6 feature: Promise API
 give promise api a taks to get executed without blocking the main thread.
+
+RxJS:
+------------------
+observable object
+observer object => watch an observable. collection of callbacks and those callbacks are executed when the observable object receives data or error and if any other task to do after observable receives data
+of => operator (function)
+
+Subject			=> 
+BehaviorSubject		=>
+ReplaySubject		=>
+
+XMLHttpRequest object:
+---------------------------------
+	     init send  received processing complete
+readyState => 0  -> 1   -> 2      -> 3       -> 4
+readystatechange => event, which gets fired every time readystate value changes
+
+
+
+
+
+
+
+
+
+
