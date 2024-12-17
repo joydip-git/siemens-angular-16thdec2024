@@ -1,0 +1,10 @@
+<p>
+    Welcome to Angular Learning {{name}}
+</p>
+<br>
+<div>
+    <label for="txtName">Name:&nbsp;</label>
+    <!-- <input type="text" value="{{name}}" id="txtName" [style.width.px]="width"> -->
+    <input type="text" [value]="name" id="txtName" [style.width.px]="width" (input)="updateName(inputName.value)"
+        #inputName>
+</div>

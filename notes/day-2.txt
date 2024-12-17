@@ -26,6 +26,80 @@ readystatechange => event, which gets fired every time readystate value changes
 
 
 
+Angular [version 19]:
+------------------------------------------------------
+client-side JS-based framework for UI development
+Single-Page Application (SPA)
+create a large application based on series of Components
+write common business/data access logic in Services
+provides dependency injection of services
+provides mechanism (binding) to pass data from code to UI or vice versa of a component
+provides routing feature
+
+Tool => Angular CLI (Command Line Interface)
+
+Standalone => non-modular application
+
+
+component naming convention:
+---------------------------------
+
+name: sample
+
+folder: sample
+		sample.component.ts	=>	SampleComponent
+		sample.component.html
+		sample.component.css
+		sample.component.spec.ts
+
+selector: <app-*>
+
+angular "things":
+-----------------------
+thing			type		class		    decorator
+component		class	export class XComponent	    @Component()
+pipe			class	export class XPipe	    @Pipe()
+directive		class	export class XDirective     @Directive()
+service			class	export class XService	    @Injectable()
+module			class	export class XModule        @NgModule()
+
+binding:
+-------------------------------------------------------
+passing data between component's code and template
+
+1. Data Binding
+direction: from code to template/view/design of the same component
+
+syntax: 
+	a. interpolation: does convert the property value to string
+	code: property-name=value
+	template: <tag-name attr-name ="{{property-name}}">
+
+	b. property binding: does not convert the property value to string
+	code: property-name=value
+	template: <tag-name [attr-name]="property-name">
+
+2. Event Binding
+direction: from template/view/design to the code of the same component
+
+	code: method(){}
+	template: <tag-name (event-name)="method(...)">
+
+var inputName = document.querySelector('#txtName')
+inputName.value
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
