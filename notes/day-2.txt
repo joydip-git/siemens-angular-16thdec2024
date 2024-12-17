@@ -1,0 +1,9 @@
+asynchronity in JS/TS:
+---------------------------------
+JS is single threaded, you can't create multiple threads from JS.
+JS can take advantage of the environment where the JS code is running.
+
+ex: Node JS, though is a JS-based server side framework, but uses extra threads (6). Out of them 4 threads are deciated to reading data from or writing data to a file etc. JS can request to get a functikn executed in an extra thread without blocking the main thread.
+
+ES6 feature: Promise API
+give promise api a taks to get executed without blocking the main thread.
