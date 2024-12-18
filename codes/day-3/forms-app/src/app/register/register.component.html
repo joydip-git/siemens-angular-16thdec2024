@@ -1,0 +1,45 @@
+<form ngForm (submit)="submit(regForm)" #regForm="ngForm">
+    <div>
+        <label for="txtUser">UserName: &nbsp;</label>
+        <!-- <input type="text" id="txtUser" placeholder="enter username" [(ngModel)]="username" name="userName"> -->
+        <input type="text" id="txtUser" placeholder="enter username" ngModel name="userName">
+    </div>
+
+    <!-- <div *ngIf="(username?.touched||username?.dirty) && username?.errors">
+
+        <div *ngIf="username?.errors?.['required']">
+            please enter user name
+        </div>
+
+        <div *ngIf="username?.errors?.['email']">
+            please enter user name in email format
+        </div>
+
+    </div> -->
+
+    <div>
+        <label for="txtPass">Password: &nbsp;</label>
+        <!-- <input type="password" id="txtPass" placeholder="enter password" [(ngModel)]="password" name="pwd"> -->
+        <input type="password" id="txtPass" placeholder="enter password" ngModel name="pwd">
+    </div>
+    <!-- <div *ngIf="password?.errors && (password?.touched||password?.dirty)">
+
+        <div *ngIf="password?.errors?.['required']">
+            please enter password
+        </div>
+
+        <div *ngIf="password?.errors?.['lengthcheck']">
+            pwd length is: {{password?.errors?.['lengthcheck'].actual}}, min length should be:
+            {{password?.errors?.['lengthcheck'].min}} and max length should be:
+            {{password?.errors?.['lengthcheck'].max}}
+        </div>
+
+        <div *ngIf="password?.errors?.['uppercheck']">
+            {{password?.errors?.['uppercheck']}}
+        </div>
+
+    </div> -->
+    <div>
+        <input type="submit" value="Login">
+    </div>
+</form>

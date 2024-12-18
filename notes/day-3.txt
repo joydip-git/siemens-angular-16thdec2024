@@ -1,11 +1,16 @@
 directives:
+	a. attribute directive:
 	used like a custom attribute that extends the behavior of any element
+	example: formGroup, formControl, formControlName etc.
+
+	b. structural directive: 
+	used like a custom attribute that manipulates DOM
 
 
 formControl => connects/binds a FormControl object with an <input> HTML element
 
 package: @angular/forms
-module: ReactiveFormsModule
+module: ReactiveFormsModule, FormsModule
 
 @NgModule({
 	declarations:[FormControlDirective],
@@ -18,4 +23,19 @@ export class ReactiveFormsModule{
 	selector:'[formControl]'
 })
 export class FormControlDirective{
+}
+
+
+@NgModule({
+	declarations:[NgModelDirective],
+	exports:[NgModelDirective]
+})
+export class FormsModule{
+}
+
+
+@Directive({
+	selector:'[ngModel]'
+})
+export class NgModelDirective{
 }
