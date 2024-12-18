@@ -2,12 +2,14 @@ import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { SampleComponent } from "./sample/sample.component";
 import { BrowserModule } from "@angular/platform-browser";
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   //register components(s), pipe(s) and directive(s)
   declarations: [
     AppComponent,
-    SampleComponent
+    SampleComponent,
+    CalculatorComponent
   ],
 
   //register service(s)

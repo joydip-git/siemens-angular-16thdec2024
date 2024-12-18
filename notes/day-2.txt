@@ -85,8 +85,18 @@ direction: from template/view/design to the code of the same component
 	code: method(){}
 	template: <tag-name (event-name)="method(...)">
 
+template reference variable:
+<tag-name #var-name>
+
+<input type='text' id='txtName' #inputName>
+===>
 var inputName = document.querySelector('#txtName')
 inputName.value
+
+
+property-name			controls
+----------------------------------------------
+name				p,input type="text"
 
 
 

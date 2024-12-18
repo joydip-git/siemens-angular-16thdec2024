@@ -1,0 +1,16 @@
+<form [formGroup]="loginForm" (submit)="submit()">
+  <div>
+    <label for="txtUser">UserName: &nbsp;</label>
+    <!-- <input type="text" id="txtUser" placeholder="enter username" [formControl]="username"> -->
+    <input type="text" id="txtUser" placeholder="enter username" formControlName="username">
+  </div>
+  <div>
+    <label for="txtPass">Password: &nbsp;</label>
+    <!-- <input type="password" id="txtPass" placeholder="enter password" [formControl]="password"> -->
+    <input type="password" id="txtPass" placeholder="enter password" formControlName="password">
+  </div>
+  <div>
+    <!-- <input type="button" value="Login" (click)="submit()"> -->
+    <input type="submit" value="Login">
+  </div>
+</form>

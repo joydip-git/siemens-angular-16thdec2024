@@ -1,0 +1,21 @@
+directives:
+	used like a custom attribute that extends the behavior of any element
+
+
+formControl => connects/binds a FormControl object with an <input> HTML element
+
+package: @angular/forms
+module: ReactiveFormsModule
+
+@NgModule({
+	declarations:[FormControlDirective],
+	exports:[FormControlDirective]
+})
+export class ReactiveFormsModule{
+}
+
+@Directive({
+	selector:'[formControl]'
+})
+export class FormControlDirective{
+}
