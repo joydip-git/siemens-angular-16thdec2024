@@ -15,15 +15,8 @@ export class CalculatorComponent {
   updateChoice(value: number) {
     this.choice = value
   }
-  updateFirst(value: number) {
-    this.first = value
-  }
-  updateSecond(value: number) {
-    this.second = value
-  }
-  calculate(event: any) {
-    event.preventDefault()
-    console.log(event);
+
+  calculate() {
     switch (this.choice) {
       case 1:
         this.result = this.first + this.second

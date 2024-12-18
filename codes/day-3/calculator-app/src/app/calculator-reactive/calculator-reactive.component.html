@@ -1,4 +1,4 @@
-<form (submit)="calculate()">
+<form [formGroup]="calcForm" (submit)="calculate()">
     <fieldset>
         <legend>Calculator Form</legend>
         <div>
@@ -21,23 +21,11 @@
         <br>
         <div>
             <label for="txtFirst">First:&nbsp;</label>
-            <input type="number" id="txtFirst" [(ngModel)]="first" name="inputFirst">
-            <!-- 
-            <input type="number" id="txtFirst" 
-            [value]="first" 
-            (input)='updateFirst(+inputFirst.value)' 
-            #inputFirst> 
-            -->
+            <input type="number" id="txtFirst" formControlName="inputFirst">
         </div>
         <div>
             <label for="txtSecond">Second:&nbsp;</label>
-            <input type="number" id="txtSecond" [(ngModel)]="second" name="inputSecond">
-            <!-- 
-                        <input type="number" id="txtSecond" 
-                        [value]="second" 
-                        (input)='updateSecond(+inputSecond.value)' 
-                        #inputSecond> 
-                        -->
+            <input type="number" id="txtSecond" formControlName="inputSecond">
         </div>
         <div>
             <input type="submit" value="Calculate">
