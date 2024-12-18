@@ -1,20 +1,40 @@
 directives:
-	a. attribute directive:
+	a. attribute directive: starts with nothing
 	used like a custom attribute that extends the behavior of any element
 	example: formGroup, formControl, formControlName etc.
 
-	b. structural directive: 
+	b. structural directive: starts with *
 	used like a custom attribute that manipulates DOM
+	example: *ngIf, *ngIfElse, *ngFor, *ngSwitch
 
+	c. component directive (component): starts with @Component()
+	used like a custom HTML tag (element)
 
-formControl => connects/binds a FormControl object with an <input> HTML element
+forms:
+	a. Reactive Forms
+		i. synchronous
+		ii. easy to unit test
+		iii. reusablility of form code
+		iv. hardly few directives (such as formControl, formControlName, formGroup etc.) are used, which does not overload the runtime with many objects, as there is no directive for validators are used, validators are simply methods here.
+		 
+	b. template-driven form
+		i. asynchronous
+		ii. not so easy to unit test
+		iii. reusablility of form code not possible, as everything is done through some directives in template
+		iv. many directives (such as ngModel, ngForm etc.) are used. all validators here are directives, NOT methods, hence they overload the runtime with many objects.
 
 package: @angular/forms
-module: ReactiveFormsModule, FormsModule
+
+1. Reactive Forms Approach:
+formControl => connects/binds a FormControl object with an <input> HTML element
+formGroup => connects/binds a FormGroup object with an <form> HTML element
+formControlName => connects/binds a FormControl object as part of the FormGroup controls collection, with an <input> HTML element
+
+module: ReactiveFormsModule
 
 @NgModule({
-	declarations:[FormControlDirective],
-	exports:[FormControlDirective]
+	declarations:[FormControlDirective, FormControlNameDirective, FormGroupDirective],
+	exports:[FormControlDirective, FormControlNameDirective, FormGroupDirective]
 })
 export class ReactiveFormsModule{
 }
@@ -25,10 +45,22 @@ export class ReactiveFormsModule{
 export class FormControlDirective{
 }
 
+2. template-driven forms Approach:
+
+module: FormsModule
+
+ngModel => 
+creates a FormControl object
+connects a an HTML <input> element with a FormControl object
+connects a an HTML <input> element with a property of a component via FormControl object
+
+ngForm =>
+creates a FormGroup object
+connects a an HTML <form> element with a FormGroup object
 
 @NgModule({
-	declarations:[NgModelDirective],
-	exports:[NgModelDirective]
+	declarations:[NgModelDirective, NgFormDirective],
+	exports:[NgModelDirective, NgFormDirective]
 })
 export class FormsModule{
 }
@@ -39,3 +71,6 @@ export class FormsModule{
 })
 export class NgModelDirective{
 }
+
+
+

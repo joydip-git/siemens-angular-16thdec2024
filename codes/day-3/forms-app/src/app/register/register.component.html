@@ -2,44 +2,47 @@
     <div>
         <label for="txtUser">UserName: &nbsp;</label>
         <!-- <input type="text" id="txtUser" placeholder="enter username" [(ngModel)]="username" name="userName"> -->
-        <input type="text" id="txtUser" placeholder="enter username" ngModel name="userName">
+        <input type="text" id="txtUser" placeholder="enter username" ngModel name="userName" required email
+            #inputName="ngModel">
     </div>
 
-    <!-- <div *ngIf="(username?.touched||username?.dirty) && username?.errors">
+    <div *ngIf="(inputName.control.touched|| inputName.control.dirty) && inputName.control.errors">
 
-        <div *ngIf="username?.errors?.['required']">
+        <div *ngIf="inputName.control.errors['required']">
             please enter user name
         </div>
 
-        <div *ngIf="username?.errors?.['email']">
+        <div *ngIf="inputName.control.errors['email']">
             please enter user name in email format
         </div>
 
-    </div> -->
+    </div>
 
     <div>
         <label for="txtPass">Password: &nbsp;</label>
         <!-- <input type="password" id="txtPass" placeholder="enter password" [(ngModel)]="password" name="pwd"> -->
-        <input type="password" id="txtPass" placeholder="enter password" ngModel name="pwd">
+        <input type="password" id="txtPass" placeholder="enter password" ngModel name="pwd" #inputPwd="ngModel" required
+            passwordValidator>
     </div>
-    <!-- <div *ngIf="password?.errors && (password?.touched||password?.dirty)">
 
-        <div *ngIf="password?.errors?.['required']">
+    <div *ngIf="inputPwd.control.errors && (inputPwd.control.touched||inputPwd.control.dirty)">
+
+        <div *ngIf="inputPwd.control.errors['required']">
             please enter password
         </div>
 
-        <div *ngIf="password?.errors?.['lengthcheck']">
-            pwd length is: {{password?.errors?.['lengthcheck'].actual}}, min length should be:
-            {{password?.errors?.['lengthcheck'].min}} and max length should be:
-            {{password?.errors?.['lengthcheck'].max}}
+        <div *ngIf="inputPwd.control.errors['lengthcheck']">
+            pwd length is: {{inputPwd.control.errors['lengthcheck'].actual}}, min length should be:
+            {{inputPwd.control.errors['lengthcheck'].min}} and max length should be:
+            {{inputPwd.control.errors['lengthcheck'].max}}
         </div>
 
-        <div *ngIf="password?.errors?.['uppercheck']">
-            {{password?.errors?.['uppercheck']}}
+        <div *ngIf="inputPwd.control.errors['uppercheck']">
+            {{inputPwd.control.errors['uppercheck']}}
         </div>
+    </div>
 
-    </div> -->
     <div>
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" [disabled]="regForm.form.invalid">
     </div>
 </form>
