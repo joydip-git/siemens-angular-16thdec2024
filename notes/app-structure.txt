@@ -1,0 +1,23 @@
+app:
+	app.module.ts
+
+	app.component.html
+	app.component.css
+	app.component.ts
+	app.component.spec.ts
+
+	modules (folder)
+		products (folder)
+			products.module.ts (ProductsModule)
+
+			components (folder)
+				product-list (folder)
+					product-list.component.html
+					product-list.component.css
+					product-list.component.ts
+
+			services (folder)
+
+			pipes (folder)
+
+		
