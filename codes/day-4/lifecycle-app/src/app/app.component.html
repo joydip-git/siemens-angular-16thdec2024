@@ -1,0 +1,13 @@
+<div>
+    <label for="txtName">Name: &nbsp;</label>
+    <input type="text" id="txtName" [(ngModel)]="name">
+</div>
+
+<br>
+<div>
+    <app-nested [personName]="name" *ngIf="show"></app-nested>
+    <br>
+    <button type="button" (click)="updateShow()">
+        {{show?'Hide':'Show'}}
+    </button>
+</div>

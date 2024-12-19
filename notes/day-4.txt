@@ -142,6 +142,45 @@ provideHttpclient() => brings the service provider of HttpClient
 import the module for HttpClient for its provider
 ask for DI of HttpClient in your service class constructor
 
+@Component()/@Directive()/@Pipe/@NgModule()
+
+ProductContainerComponent	=> ProductService
+
+@Injectable()
+ProductService			=> HttpClient
+
+@Injectable() => must be used with an entity, which requires DI in Angular
+@Component()/@Directive()/@Pipe/@NgModule() etc. when used with a class, automtaically applies that decorator
+in case of Service, since that is a regular class, you must manually mark the same with @Injectable(), in case that service class has dependency/dependencies
+
+Best Practice: always use @Injectable() with service
+
+
+Lifecycle of Component instance:
+-------------------------------------------
+1. creation phase:
+	a. all properties are initialized with default values (if provided)
+	b. constructor gets invoked (some fields might get initialized)
+	c. if it is a nested component and has @Input() properties, will now receive data from the parent component. this time an event gets fired: changes
+	d. after "changes" event, "init" event gets fired
+
+2. update phase:
+	if it is a nested component and has @Input() properties, will now receive updated data from the parent component, if in the parnet component the actual data state is updated. this time also from component 'changes' event gets fired.
+
+3. destruction phase:
+	when component (design) gets somehow (conditionally) unmounted from HTML/DOM, then the component gets destroyed. this time an event gets fired "destroy"
+
+
+event-name		interface	method
+----------------------------------------------------
+X			OnX		ngOnX
+
+changes			
+	
+
+
+
+
 
 
 

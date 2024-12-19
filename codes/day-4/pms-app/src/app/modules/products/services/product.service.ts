@@ -4,7 +4,11 @@ import { ServiceContract } from "./servicecontract";
 import { API_URL } from "../../../utils/constants";
 import { ApiResponse } from "../../../models/apiresponse";
 import { Observable } from "rxjs";
+import { Injectable } from "@angular/core";
 
+//@Injectable({ providedIn: 'root' })
+//equivalent to => @NgModule({providers:[ProductService]}) AppModule
+@Injectable()
 export class ProductService implements ServiceContract {
 
     constructor(private http: HttpClient) {
