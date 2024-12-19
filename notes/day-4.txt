@@ -1,7 +1,20 @@
 passing data between components
 
-1. passing data between shallow nested components
+1. passing data between shallowly nested components
 	a. passing data from nested to its parent component: event-bidning
 	
 	In nested component => 
 	i. create a property which is of type EventEmitter
+	ii. decide which type of value to emit
+	iii. decorate the property with @utput() decorator (@angualr/core package)
+	iv. emit the value bu calling "this.eventPropName.emit(value)"
+
+
+	In parent component design=>
+	bind the event to a method in component's code
+	<app-x (event-propname)="method($event)">
+
+	In parent component's code=>
+	method(value:any){
+		//code to do something with the received value
+	}
