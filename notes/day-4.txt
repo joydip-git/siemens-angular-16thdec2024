@@ -1,0 +1,7 @@
+passing data between components
+
+1. passing data between shallow nested components
+	a. passing data from nested to its parent component: event-bidning
+	
+	In nested component => 
+	i. create a property which is of type EventEmitter

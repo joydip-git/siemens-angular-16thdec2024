@@ -8,6 +8,8 @@ import { Product } from '../../../../models/product';
   //standalone: false
 })
 export class ProductListComponent {
+  filterText = ''
+
   products: Product[] = [
     {
       "productId": 1,

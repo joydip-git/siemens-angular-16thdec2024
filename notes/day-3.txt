@@ -88,6 +88,8 @@ export class UppercasePipe implements PipeTransform{
 {{p.productName|uppercase}}
 {{p.price|currency:'INR':'0-2':''}}
 
+built-in pipes: lowercase, uppercase, currency, symbol, async etc.
+
 
 
 
