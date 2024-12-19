@@ -34,4 +34,120 @@ passing data between components
 filter-product component template => filter-product component code => parent compoent design => parent compoent code => nested (product-list) component code => nested (product-list) component design
 
 
+get all products
+GET => http://localhost:3003/products		{ "message":"", "data":[{},{},...]}
+
+geta product
+GET http://127.0.0.1:3003/products/1		{ "message":"", "data":{} }
+
+incorrect id:
+GET http://127.0.0.1:3003/products/100		{ "message":"", "data":null }
+
+add a new product
+POST http://127.0.0.1:3003/products		{ "message":"", "data":[{},{},...] }
+request body: a JSON object (product)
+
+existing product id
+POST http://127.0.0.1:3003/products		{ "message":"", "data":null }
+
+update an existing product
+PUT http://127.0.0.1:3003/products/6		{ "message":"", "data":[{},{},...] }
+request body: a JSON object (product)
+
+update an existing product with incorrect id:
+PUT http://127.0.0.1:3003/products/100		{ "message":"", "data":null }
+
+delete an existing product:
+DELETE http://127.0.0.1:3003/products/6		{ "message":"", "data":[{},{},...] }	
+
+delete an existing product with incorrect id:
+DELETE http://127.0.0.1:3003/products/100	{ "message":"", "data":null }	
+
+
+response model:
+{ "message":string, "data": {} | [{},..] | null }
+
+
+Service in Angular:
+----------------------------
+1. service creation => create a class with methods
+2. service provider registration:
+
+where????
+	a. dedicated instance for a single asset: 
+		register with asset level "providers:[]"
+
+	b. dedicated instance for multiple assets of a feature module
+		register with feature module level "providers:[]"
+
+	c. dedicated instance for multiple assets from entire application
+		register with root module level "providers:[]"
+
+How???
+	//class provider
+	providers:[ProductService]
+
+	//equivalent to
+	providers:[
+		{
+      			provide: ProductService,
+      			useClass: ProductService
+    		}
+	]
+
+	other ways:
+	providers:[
+	{
+      	provide: ProductService,
+      	useValue: new ProductService()
+    	}
+    	{
+      	provide: ProductService,
+      	useExisting: ProductService,
+    	}
+    	{
+      	provide: ProductService,
+      	useFactory: () => { return new ProductService() }
+    	}]
+
+
+	custom tokenized service provider:
+	 {
+      	provide: 'SERVICE_TOKEN',
+      	useClass: ProductService
+    	}
+
+3. service consumption:
+
+constructor(private ps: ProductService) => create an instance of service class  or its child type, which is tokenized by the same name as that of the service class and supply the reference of that service class object
+
+constructor(@Inject('SERVICE_TOKEN') ps: ProductService) => create an instance of service class  or its child type, which is tokenized by the token 'SERVICE_TOKEN'
+
+@Inject(<token-name>) => decorator for method/constructor parameter, NOT for property of the class
+
+constructor(@Inject(SERVICE_TOKEN) private ps: ServiceContract) => create an instance of service class  that implements ServiceContract interface and toekenized by the  token SERVICE_TOKEN
+
+
+HTTP requests:
+-------------------------
+built-in service class: HttpClient
+methods: get(), post(), put(), delete(),....
+
+providers:[HttpClient] => HttpClientModule (depricated)
+
+provideHttpclient() => brings the service provider of HttpClient
+
+import the module for HttpClient
+ask for DI of HtppClient in your service class constructor
+
+
+
+
+
+
+
+
+
+
+
 

@@ -13,6 +13,7 @@ import { ProductsModule } from './modules/products/products.module';
     ProductsModule
   ],
   providers: [],
+  //providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
