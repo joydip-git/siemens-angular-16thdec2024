@@ -37,7 +37,7 @@ filter-product component template => filter-product component code => parent com
 get all products
 GET => http://localhost:3003/products		{ "message":"", "data":[{},{},...]}
 
-geta product
+get a product
 GET http://127.0.0.1:3003/products/1		{ "message":"", "data":{} }
 
 incorrect id:
@@ -132,13 +132,15 @@ HTTP requests:
 -------------------------
 built-in service class: HttpClient
 methods: get(), post(), put(), delete(),....
+return type: Observable<any>
+
 
 providers:[HttpClient] => HttpClientModule (depricated)
 
 provideHttpclient() => brings the service provider of HttpClient
 
-import the module for HttpClient
-ask for DI of HtppClient in your service class constructor
+import the module for HttpClient for its provider
+ask for DI of HttpClient in your service class constructor
 
 
 
