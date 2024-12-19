@@ -18,3 +18,20 @@ passing data between components
 	method(value:any){
 		//code to do something with the received value
 	}
+
+	b. passing data from parent to nested component: data-binding
+
+	In nested component:
+	declare a property with @Input() decorator
+	@Input() prop-name:type=<init-val>
+
+	In parent component design: [do data binding of that @Input() property]
+	<app-x [prop-name]="data-from-parent">
+
+
+
+
+filter-product component template => filter-product component code => parent compoent design => parent compoent code => nested (product-list) component code => nested (product-list) component design
+
+
+

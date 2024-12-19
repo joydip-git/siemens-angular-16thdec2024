@@ -7,7 +7,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class FilterProductComponent {
   filterText = ''
-  @Output() filterTextChanged = new EventEmitter<string>()
+  @Output('filterTextUpdated') filterTextChanged = new EventEmitter<string>()
 
   // x =new EventEmitter<Event>()
 

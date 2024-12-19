@@ -16,8 +16,20 @@ app:
 					product-list.component.css
 					product-list.component.ts
 
+				filter-product (folder)
+					filter-product.component.html
+					filter-product.component.css
+					filter-product.component.ts
+
+				product-container (folder)
+					product-container.component.html
+					product-container.component.css
+					product-container.component.ts
+
+
 			services (folder)
 
 			pipes (folder)
+					product-filter.pipe.ts
 
 		

@@ -1,0 +1,13 @@
+<div class="container container-fluid">
+
+    <h2>List of Products</h2>
+
+    <br>
+
+    <app-filter-product (filterTextUpdated)="updateFilterText($event)"></app-filter-product>
+
+    <br>
+
+    <app-product-list [products]="records" [textToFilter]="filterValue"></app-product-list>
+
+</div>
