@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../../../models/product';
 
 @Component({
@@ -10,8 +10,9 @@ import { Product } from '../../../../models/product';
 export class ProductListComponent {
   @Input('textToFilter') filterText = ''
   @Input() products: Product[] | undefined;
+  // @Output() productSelected = new EventEmitter<number>()
 
-  // constructor() {
-  //   this.products = []
+  // selectProduct(id: number) {
+  //   this.productSelected.emit(id)
   // }
 }

@@ -1,0 +1,16 @@
+POST http://127.0.0.1:3000/auth/register
+Content-Type: application/json
+
+{
+    "username":"avc@gmail.com",
+    "password":"Joydip@123"
+}
+
+###
+POST http://127.0.0.1:3000/auth/authenticate
+Content-Type: application/json
+
+{
+    "username":"joy@gmail.com",
+    "password":"Joydip@123"
+}

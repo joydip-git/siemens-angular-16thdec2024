@@ -63,4 +63,11 @@ export class ProductContainerComponent {
   updateFilterText(value: string) {
     this.filterValue = value
   }
+
+  // deleteProduct(id: number) {
+  //   const foundIndex = this.records.findIndex(p => p.productId === id)
+  //   if (foundIndex !== -1) {
+  //     this.records.splice(foundIndex, 1)
+  //   }
+  // }
 }
