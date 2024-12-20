@@ -1,0 +1,68 @@
+routing in angular
+----------------------------
+it is a client side routing
+based on the url in the browser, a component is dynamically loaded on the index.html via root (bootstrapped) component
+
+package: @angular/router
+module: RouterModule
+
+router engine => Router 
+Router => built-in service class
+
+steps:
+
+1. you need to create routes
+	Route (type) => used to create a route
+	properties: "path" (URI part of the URL) and "component" (the component to be loaded based on the path). there are other properties, too.
+
+2. create an array to place the Route objects
+	Routes (type) => Route[] => used to store route objects
+
+3. register the routes
+	RouterModule.forChild(<routes-array>): used to register the routes of a feature module. does not create a new Router engine.
+	RouterModule.forRoot(<routes-array>): generally used to regsiter the routes of root module.
+
+where?
+	a. feature module related routes in the feature module itself
+	b. all routes at one place, such as separate file or root module (if all the assets are registered with root module)
+
+http://localhost:4200/products 		=> ProductContainerComponent [FilterProductComponent + ProducListComponent]
+http://localhost:4200/products/view/1 	=> ViewProductComponent
+http://localhost:4200/products/update/1 => UpdateProductComponent
+http://localhost:4200/products/add 	=> AddProductComponent 
+
+http://localhost:4200/home		=> HomeComponent
+http://localhost:4200/			=> HomeComponent
+
+DashBoardComponent
+
+http://localhost:4200/anything-else	=> PageNotFoundComponent
+
+product module components:
+---------------------------------
+ng g c modules/products/components/add-product --standalone=false
+ng g c modules/products/components/update-product --standalone=false
+ng g c modules/products/components/view-product --standalone=false
+
+shared module and its components:
+------------------------------------------
+ng g m modules/shared
+
+ng g c modules/shared/components/dash-board --standalone=false
+ng g c modules/shared/components/home --standalone=false
+
+page not found component for app module
+----------------------------------------------
+ng g c page-not-found --standalone=false
+
+
+
+
+
+
+
+
+
+
+
+

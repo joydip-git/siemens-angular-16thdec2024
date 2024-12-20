@@ -7,13 +7,19 @@ import { FilterProductComponent } from './components/filter-product/filter-produ
 import { ProductContainerComponent } from './components/product-container/product-container.component';
 import { provideHttpClient } from '@angular/common/http';
 import { provideProductService } from '../../utils/provideproductservice';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { ViewProductComponent } from './components/view-product/view-product.component';
+import { UpdateProductComponent } from './components/update-product/update-product.component';
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductFilterPipe,
     FilterProductComponent,
-    ProductContainerComponent
+    ProductContainerComponent,
+    AddProductComponent,
+    ViewProductComponent,
+    UpdateProductComponent
   ],
   imports: [
     CommonModule,
