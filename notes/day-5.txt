@@ -30,6 +30,11 @@ ActivatedRoute => built-in service class, which stores current navigation inform
 in this way, Angular creates several AcivatedRoute objects and stores them as part of RouterSate (which is also a built-in service class)
 
 
+Auth Guard:
+--------------------
+guarding the routes using authentication
+
+
 APP ROUTES:
 ----------------------------
 
@@ -70,6 +75,8 @@ ng g m modules/products  --routing=true
 2. products.module.ts
 
 params => {id:'2'}
+
+
 
 
 
