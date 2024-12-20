@@ -1,1 +1,21 @@
-<p>view-product works!</p>
+<ng-template #loadingTemplate>
+    <span>Loading...</span>
+</ng-template>
+
+<ng-template #errorTemplate>
+    <span>{{errorMessage}}</span>
+</ng-template>
+
+<ng-template #noRecordTemplate>
+    <span>No data found...</span>
+</ng-template>
+
+<div *ngIf="isFetchComplete;else loadingTemplate">
+    <div *ngIf="errorMessage==='';else errorTemplate">
+        <div *ngIf="product;else noRecordTemplate">
+            <span>Details of: {{product.productName}}</span>
+            <br>
+            <button type="button" class="btn btn-primary" (click)="update(product.productId)">Edit</button>
+        </div>
+    </div>
+</div>

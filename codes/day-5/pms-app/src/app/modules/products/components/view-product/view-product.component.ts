@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { SERVICE_TOKEN } from '../../../../utils/constants';
 import { ServiceContract } from '../../services/servicecontract';
 import { Subscription } from 'rxjs';
@@ -10,7 +10,7 @@ import { ApiResponse } from '../../../../models/apiresponse';
   templateUrl: './view-product.component.html',
   styleUrl: './view-product.component.css'
 })
-export class ViewProductComponent implements OnInit {
+export class ViewProductComponent implements OnInit, OnDestroy {
 
   private sub?: Subscription;
 
@@ -20,10 +20,19 @@ export class ViewProductComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    @Inject(SERVICE_TOKEN) private ps: ServiceContract
+    @Inject(SERVICE_TOKEN) private ps: ServiceContract,
+    private router: Router
   ) {
 
   }
+  update(id: number) {
+    this.router.navigate(['/products', 'update', id])
+  }
+
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe()
+  }
+
   ngOnInit(): void {
     const snapshot: ActivatedRouteSnapshot = this.route.snapshot
     //const id = +snapshot.params['id']
