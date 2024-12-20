@@ -55,6 +55,17 @@ page not found component for app module
 ----------------------------------------------
 ng g c page-not-found --standalone=false
 
+module with routing mdoule file:
+------------------------------------------------
+ng g m modules/products  --routing=true
+
+1. products-rotuing.module.ts
+2. products.module.ts
+
+params => {id:'1'}
+
+
+
 
 
 

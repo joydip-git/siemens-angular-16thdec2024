@@ -10,6 +10,7 @@ import { provideProductService } from '../../utils/provideproductservice';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { ViewProductComponent } from './components/view-product/view-product.component';
 import { UpdateProductComponent } from './components/update-product/update-product.component';
+import { ProductsRoutingModule } from './products-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UpdateProductComponent } from './components/update-product/update-produ
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ProductsRoutingModule
   ],
   exports: [
     ProductContainerComponent
