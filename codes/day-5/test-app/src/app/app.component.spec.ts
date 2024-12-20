@@ -1,35 +1,84 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import { ComponentFixture, TestBed } from "@angular/core/testing"
+import { AppComponent } from "./app.component"
+import { DebugElement } from "@angular/core";
+import { TodosService } from "./todos.service";
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  });
+//test suite
+describe(
+  'AppComponentTesting',
+  () => {
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+    let appComponentFixture: ComponentFixture<AppComponent>;
+    let appComponent: AppComponent;
+    let appComponentTemplate: DebugElement;
 
-  it(`should have as title 'test-app'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('test-app');
-  });
+    beforeEach(
+      async () => {
+        await TestBed
+          .configureTestingModule({
+            declarations: [AppComponent],
+            providers: [TodosService]
+          })
+          .compileComponents()
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, test-app');
-  });
-});
+        appComponentFixture = TestBed.createComponent(AppComponent)
+        appComponent = appComponentFixture.componentInstance
+        appComponentTemplate = appComponentFixture.debugElement
+        appComponentFixture.detectChanges()
+      }
+    )
+
+    afterEach(
+      () => {
+        appComponentFixture.destroy()
+      }
+    )
+
+    it('appcomponent has title value=welcome to angular',
+      () => {
+        //act and assert
+        expect(appComponent.title).toBe('welcome to angular')
+      }
+    )
+
+    it('appcomponent display h2 with message welcome to angular',
+      () => {
+        //act and assert
+        const html = appComponentTemplate.nativeElement as HTMLElement
+        const content = html.querySelector('h2')?.textContent
+        expect(content).toEqual('welcome to angular')
+      }
+    )
+
+    it('appcomponent has upadted title value=welcome to angular testing',
+      () => {
+        //act and assert
+        appComponent.updateTitle('welcome to angular testing')
+        expect(appComponent.title).toBe('welcome to angular testing')
+      }
+    )
+
+    it('appcomponent has upadated title value=welcome to angular testing which is dispalyed in h2',
+      () => {
+        //act and assert
+        appComponent.updateTitle('welcome to angular testing')
+        appComponentFixture.detectChanges()
+        const html = appComponentTemplate.nativeElement as HTMLElement
+        const content = html.querySelector('h2')?.textContent
+        expect(content).toEqual('welcome to angular testing')
+      }
+    )
+
+    it('appcomponent will display upadated title in h2 with service data=Welcome to Angular Testing',
+      () => {
+        //act and assert
+        appComponent.setValue()
+        appComponentFixture.detectChanges()
+        const html = appComponentTemplate.nativeElement as HTMLElement
+        const content = html.querySelector('h2')?.textContent
+        expect(content).toEqual('Welcome to Angular Testing')
+      }
+    )
+
+  }
+)

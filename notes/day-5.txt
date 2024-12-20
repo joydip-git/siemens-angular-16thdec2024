@@ -76,6 +76,11 @@ ng g m modules/products  --routing=true
 
 params => {id:'2'}
 
+Unit testing:
+-----------------
+framework: jasmine (jasmine-core)
+test runner: karma (karma, karma-chrome, karma-html-repor)
+
 
 
 
