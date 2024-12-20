@@ -26,6 +26,13 @@ where?
 	a. feature module related routes in the feature module itself
 	b. all routes at one place, such as separate file or root module (if all the assets are registered with root module)
 
+ActivatedRoute => built-in service class, which stores current navigation information, when you visit a route
+in this way, Angular creates several AcivatedRoute objects and stores them as part of RouterSate (which is also a built-in service class)
+
+
+APP ROUTES:
+----------------------------
+
 http://localhost:4200/products 		=> ProductContainerComponent [FilterProductComponent + ProducListComponent]
 http://localhost:4200/products/view/1 	=> ViewProductComponent
 http://localhost:4200/products/update/1 => UpdateProductComponent
@@ -62,7 +69,7 @@ ng g m modules/products  --routing=true
 1. products-rotuing.module.ts
 2. products.module.ts
 
-params => {id:'1'}
+params => {id:'2'}
 
 
 

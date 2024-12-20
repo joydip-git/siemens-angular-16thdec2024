@@ -14,7 +14,7 @@
     </thead>
     <tbody class="table-dark">
         <tr *ngFor="let p of (products|productFilter:filterText)">
-            <td>
+            <td [routerLink]="['/products','view',p.productId]">
                 <img class="img-style" [src]="p.imageUrl" alt="NA" [title]="p.productName">
             </td>
             <td>{{p.productName|uppercase}}</td>

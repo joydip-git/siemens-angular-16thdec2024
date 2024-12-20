@@ -1,27 +1,22 @@
-<div class="container container-fluid">
+<h2>List of Products</h2>
 
-    <h2>List of Products</h2>
+<br>
 
-    <br>
+<app-filter-product (filterTextUpdated)="updateFilterText($event)"></app-filter-product>
 
-    <app-filter-product (filterTextUpdated)="updateFilterText($event)"></app-filter-product>
+<br>
 
-    <br>
+<ng-template #loadingTemplate>
+    <span>Loading...</span>
+</ng-template>
 
-    <ng-template #loadingTemplate>
-        <span>Loading...</span>
-    </ng-template>
+<ng-template #errorTemplate>
+    <span>{{errorMessage}}</span>
+</ng-template>
 
-    <ng-template #errorTemplate>
-        <span>{{errorMessage}}</span>
-    </ng-template>
-
-    <div *ngIf="isFetchComplete;else loadingTemplate">
-        <div *ngIf="errorMessage==='';else errorTemplate">
-            <app-product-list [products]="records" [textToFilter]="filterValue"
-                (productSelected)="removeProduct($event)">
-            </app-product-list>
-        </div>
+<div *ngIf="isFetchComplete;else loadingTemplate">
+    <div *ngIf="errorMessage==='';else errorTemplate">
+        <app-product-list [products]="records" [textToFilter]="filterValue" (productSelected)="removeProduct($event)">
+        </app-product-list>
     </div>
-
 </div>

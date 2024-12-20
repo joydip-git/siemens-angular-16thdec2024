@@ -21,6 +21,7 @@ const sharedRoutes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(sharedRoutes)
-  ]
+  ],
+  exports: [DashBoardComponent]
 })
 export class SharedModule { }
